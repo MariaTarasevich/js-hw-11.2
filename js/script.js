@@ -139,6 +139,7 @@ class ContactsApp extends Contacts {
         ul.innerHTML = list;
         this.app.appendChild(ul);
         this.onAddEventRemoveEdit();
+        this.edit();
     }
 
     onAddEventRemoveEdit(){
@@ -161,21 +162,18 @@ class ContactsApp extends Contacts {
     }
 
     edit(){
-        const editBtn = document.querySelectorAll('.contact__item__edit')
+        const listP = document.querySelectorAll('p');
+
+        const editBtn = document.querySelectorAll('.contact__item__edit');
 
         editBtn.forEach((edBtn) => {
-            edBtn.addEventListener('click', (e) => {
-                this.onAddEventRemoveEdit(e.target.id)
+            edBtn.addEventListener('click', () => {
+                    for(let i = 0; i < listP.length; i++){
+                    listP[i].setAttribute('contenteditable', 'true')
+                }
             })
         })
     }
-
-    onEdit(id){
-        this.addEvent(id)
-        this.onShow()
-    }
-
-
 }
 
 window.addEventListener('load', () =>{
