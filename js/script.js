@@ -63,7 +63,7 @@ class ContactsApp extends Contacts {
 
     createHTML(){
         const contactOption = document.createElement('div')
-        contactOption.classList.add('.contacts__option')
+        contactOption.classList.add('contacts__option')
 
         this.app = document.createElement('div');
         this.inputName = document.createElement('input');
@@ -78,6 +78,11 @@ class ContactsApp extends Contacts {
         this.inputEmail.classList.add('contact__email')
         this.inputAddress.classList.add('contact__address')
         this.addButton.classList.add('contact__button__add')
+
+        this.inputName.setAttribute('placeholder', 'Введите имя...')
+        this.inputPhone.setAttribute('placeholder', 'Введите телефон...')
+        this.inputEmail.setAttribute('placeholder', 'Введите почту...')
+        this.inputAddress.setAttribute('placeholder', 'Введите адрес...')
 
         this.addButton.innerHTML = "Добавить контакт"
 
